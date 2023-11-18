@@ -5,7 +5,12 @@ public abstract class Usuario {
 	private String nombreUsuario;
 	private String contraseña;
 	private boolean esAdmin;
-	private boolean estaSubscripto;
+	private boolean esSubscriptor;
+
+	public Usuario(String nombreUsuario, String contraseña){
+		this.nombreUsuario = nombreUsuario;
+		this.contraseña = contraseña;
+	}
 	
 	public String getNombreUsuario() {
 		return nombreUsuario;
@@ -25,11 +30,11 @@ public abstract class Usuario {
 	public void setEsAdmin(boolean esAdmin) {
 		this.esAdmin = esAdmin;
 	}
-	public boolean getEstaSubscripto() {
-		return estaSubscripto;
+	public boolean getEsSubscriptor() {
+		return esSubscriptor;
 	}
-	public void setEstaSubscripto(boolean estaSubscripto) {
-		this.estaSubscripto = estaSubscripto;
+	public void setEsSubscriptor(boolean estaSubscripto) {
+		this.esSubscriptor = estaSubscripto;
 	}
 	
 	

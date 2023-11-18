@@ -4,10 +4,15 @@ public class Libro {
 	
 	private String nombreLibro;
 	private String generoLibro;
-	private String autor;
+	private String autorLibro;
 	private String Descripcion;
 	
-	
+	public Libro(String nombreLibro, String autorLibro, String generoLibro, String descripcionLibro) {
+		setNombreLibro(nombreLibro);
+		setAutor(autorLibro);
+		setGeneroLibro(generoLibro);
+		setDescripcion(descripcionLibro);
+	}
 	public String getNombreLibro() {
 		return nombreLibro;
 	}
@@ -20,11 +25,11 @@ public class Libro {
 	public void setGeneroLibro(String generoLibro) {
 		this.generoLibro = generoLibro;
 	}
-	public String getAutor() {
-		return autor;
+	public String getAutorLibro() {
+		return autorLibro;
 	}
-	public void setAutor(String autor) {
-		this.autor = autor;
+	public void setAutor(String autorLibro) {
+		this.autorLibro = autorLibro;
 	}
 	public String getDescripcion() {
 		return Descripcion;
@@ -33,5 +38,11 @@ public class Libro {
 		Descripcion = descripcion;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Nombre del libro: " + nombreLibro + "\n" +
+			"Autor del libro: " + autorLibro + "\n" +
+			"Género del libro: " + generoLibro + "\n" +
+			"Descripción: " + Descripcion + "\n";
+	}
 }

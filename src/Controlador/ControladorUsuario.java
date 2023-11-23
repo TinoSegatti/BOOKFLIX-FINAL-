@@ -3,8 +3,9 @@ package Controlador;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-import DAO.*;
-import Modelo.*;
+import DAO.ConectorDB;
+import DAO.UsuarioDAO;
+import Modelo.Usuario;
 
 public class ControladorUsuario {
     private UsuarioDAO usuarioDAO;

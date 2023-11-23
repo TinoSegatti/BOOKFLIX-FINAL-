@@ -2,10 +2,10 @@ package Controlador;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import Modelo.*;
+import DAO.*;
 
-import DAO.ConectorDB;
-import DAO.CatalogoDAO;
-import Modelo.Catalogo;
+
 
 public class ControladorCatalogo {
     private CatalogoDAO catalogoDAO;

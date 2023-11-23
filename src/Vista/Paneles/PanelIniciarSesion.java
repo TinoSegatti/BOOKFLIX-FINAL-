@@ -21,32 +21,32 @@ public class PanelIniciarSesion extends JPanel {
         Color colorFondo = new Color(0, 0, 47);
         setBackground(colorFondo);
 
-        // Ajusta el tamaño de la imagen
+        //tamaño de la imagen (.getScaledInstance())
         ImageIcon icono = new ImageIcon(new ImageIcon("C:/Users/noteb/Pictures/bookflix/Captura de pantalla "
         		+ "2023-11-14 235356.png").getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
 
-        // Imagen sobre el campo del usuario
+        //imagen sobre "usuario"
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridwidth = 2; // Ocupa dos columnas
-        gbc.anchor = GridBagConstraints.CENTER; // Centra en horizontal
-        gbc.insets = new Insets(10, 10, 100, 10); // Margen superior de 20 píxeles
+        gbc.gridwidth = 2; //columnas
+        gbc.anchor = GridBagConstraints.CENTER; 
+        gbc.insets = new Insets(10, 10, 100, 10); // Margenenes
         JLabel imagenLabel = new JLabel(icono);
         add(imagenLabel, gbc);
 
         // Usuario Label
         gbc.gridx = 0;
-        gbc.gridy = 1; // Incrementé el índice de la fila
+        gbc.gridy = 1; //indice
         gbc.insets = new Insets(0, 0, 10, 0);
-        gbc.anchor = GridBagConstraints.CENTER; // Alinea a la izquierda
+        gbc.anchor = GridBagConstraints.CENTER; 
         JLabel usuarioLabel = new JLabel("Usuario:");
-        usuarioLabel.setForeground(Color.WHITE); // Establece el color del texto a blanco
+        usuarioLabel.setForeground(Color.WHITE); //color del texto blanco
         add(usuarioLabel, gbc);
 
         
 
         // Campo de texto para el usuario
-        gbc.gridy = 2; // Incrementé el índice de la fila
+        gbc.gridy = 2; // indice 
         nombreUsuarioField = new JTextField(20);
         gbc.insets = new Insets(0, 0, 50, 0);
         add(nombreUsuarioField, gbc);
@@ -54,17 +54,17 @@ public class PanelIniciarSesion extends JPanel {
         // Contraseña Label
         
         gbc.gridx = 0;
-        gbc.gridy = 2; // Incrementé el índice de la fila
-        gbc.insets = new Insets(30, 10, 0, 5); // Añadí espacio arriba
+        gbc.gridy = 2; 
+        gbc.insets = new Insets(30, 10, 0, 5); 
         JLabel contraseniaLabel = new JLabel("Contraseña:");
-        contraseniaLabel.setForeground(Color.WHITE); // Establece el color del texto a blanco
+        contraseniaLabel.setForeground(Color.WHITE); 
         add(contraseniaLabel, gbc);
 
         // Campo de contraseña
-        gbc.gridx = 1; // Incrementé el índice de la columna
-        gbc.gridy = 3; // Incrementé el índice de la fila
-        gbc.insets = new Insets(0, 0, 30, 10); // Añadí menos espacio arriba
-        contraseniaField = new JPasswordField(20); // Aumenté el ancho del campo de contraseña
+        gbc.gridx = 1; 
+        gbc.gridy = 3; 
+        gbc.insets = new Insets(0, 0, 30, 10); 
+        contraseniaField = new JPasswordField(20); 
         add(contraseniaField, gbc);
 
 
@@ -73,7 +73,7 @@ public class PanelIniciarSesion extends JPanel {
         	protected void paintComponent(Graphics g) {
         		setLayout(new GridBagLayout());
 
-                // Establece el color de fondo utilizando RGB (por ejemplo, rojo oscuro)
+                //color de fondo utilizando RGB
                 Color colorFondo = new Color(139, 0, 0);
                 setBackground(colorFondo);
             }
@@ -90,16 +90,16 @@ public class PanelIniciarSesion extends JPanel {
         
         panelBotones.add(botonIniciarSesion);
 
-        // Agregar espacio en blanco entre los botones
-        panelBotones.add(Box.createRigidArea(new Dimension(10, 10))); // Ajusta la distancia aquí
+        //espacio en blanco entre los botones
+        panelBotones.add(Box.createRigidArea(new Dimension(10, 10)));
 
         panelBotones.add(botonAtras);
 
         // Configuración para el panel de botones
-        gbc.gridy = 5; // Incrementé el índice de la fila
-        gbc.gridwidth = 2; // Ocupa dos columnas
-        gbc.anchor = GridBagConstraints.CENTER; // Centra en horizontal
-        panelBotones.setAlignmentX(Component.CENTER_ALIGNMENT); // Centra el panel de botones
+        gbc.gridy = 5; 
+        gbc.gridwidth = 2; 
+        gbc.anchor = GridBagConstraints.CENTER; 
+        panelBotones.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(panelBotones, gbc);
 
 

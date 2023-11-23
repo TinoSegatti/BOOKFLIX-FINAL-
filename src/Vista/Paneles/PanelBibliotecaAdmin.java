@@ -20,18 +20,17 @@ public class PanelBibliotecaAdmin extends JPanel {
         // Parte superior
         JLabel mensajeBienvenida = new JLabel("Bienvenido, " + controladorUsuario.getUsuarioActual().getNombreUsuario());
         mensajeBienvenida.setForeground(Color.WHITE);
-        mensajeBienvenida.setOpaque(true); // Hace que el JLabel sea opaco
-        mensajeBienvenida.setBackground(colorFondo); // Establece el fondo del JLabel
+        mensajeBienvenida.setBackground(colorFondo);
         add(mensajeBienvenida, BorderLayout.NORTH);
 
         // Parte central
         JPanel panelCentral = new JPanel(new GridBagLayout());
 
-        // Formulario para agregar libro
+        //formulario para agregar libro
         JPanel panelAgregarLibro = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.anchor = GridBagConstraints.WEST;
-        gbc.insets = new Insets(5, 5, 5, 15); // Ajusta el valor aquí para más espacio entre columnas
+        gbc.insets = new Insets(5, 5, 5, 15); //espacio entre columnas
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -81,7 +80,7 @@ public class PanelBibliotecaAdmin extends JPanel {
         JPanel panelEliminarLibro = new JPanel(new GridBagLayout());
         gbc.gridy = 0;
         gbc.gridwidth = 1;
-        gbc.insets = new Insets(5, 15, 5, 5); // Ajusta el valor aquí para más espacio entre columnas
+        gbc.insets = new Insets(5, 15, 5, 5); // Espacio entre columnas
 
         JLabel labelNombreLibroEliminar = new JLabel("Nombre del libro a eliminar:");
         labelNombreLibroEliminar.setOpaque(true);
@@ -117,7 +116,7 @@ public class PanelBibliotecaAdmin extends JPanel {
 
                 if (controladorCatalogo.agregarLibro(nombre, autor, genero, descripcion)) {
                     System.out.println("Exito: Libro agregado correctamente");
-                    // Dejar vacíos los campos de texto
+                    //campos de texto vacios
                     nombreLibro.setText("");
                     autorLibro.setText("");
                     generoLibro.setText("");
@@ -135,7 +134,7 @@ public class PanelBibliotecaAdmin extends JPanel {
 
                 if (controladorCatalogo.eliminarLibro(nombre)) {
                     System.out.println("Exito: Libro eliminado correctamente");
-                    // Dejar vacío el campo de texto
+                    //campo de texto vacio
                     nombreLibroEliminar.setText("");
                 } else {
                     System.out.println("Error: No se pudo eliminar el libro");

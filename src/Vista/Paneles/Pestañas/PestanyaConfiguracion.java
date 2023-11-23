@@ -29,27 +29,24 @@ public class PestanyaConfiguracion extends JPanel {
         add(botonCerrarSesion, gbc);
 
 
-        // Lógica para el botón de suscripción/cancelación
+        //logica para el boton de suscripción/cancelación
         botonSuscribirseCancelar = new JButton();
         actualizarTextoBoton();
-        gbc.gridx = 1;// Actualiza el texto inicial del botón
+        gbc.gridx = 1;
         add(botonSuscribirseCancelar, gbc);
 
         botonSuscribirseCancelar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                // Lógica para suscribirse o cancelar suscripción
                 if (controladorUsuario.getUsuarioActual().getEsSubscriptor()) {
-                    // Lógica para cancelar suscripción
                     System.out.println("Suscripción cancelada");
                     controladorUsuario.cancelarSuscripcion();
                 } else {
-                    // Lógica para suscribirse
                     System.out.println("Suscripción realizada");
                     controladorUsuario.suscribirse();
                 }
 
-                actualizarTextoBoton(); // Actualiza el texto del botón después de la acción
+                actualizarTextoBoton(); //actualiza el texto del botón después de la acción
                 pestanyaCatalogo.actualizarCatalogo();
             }
         });
@@ -64,7 +61,7 @@ public class PestanyaConfiguracion extends JPanel {
         });
     }
     
-    // Método para actualizar el texto del botón según el estado del usuario
+    // metodo para actualizar el texto del boton segun el estado del usuario
     private void actualizarTextoBoton() {
         if (controladorUsuario.getUsuarioActual().getEsSubscriptor()) {
             botonSuscribirseCancelar.setText("Cancelar Suscripción");

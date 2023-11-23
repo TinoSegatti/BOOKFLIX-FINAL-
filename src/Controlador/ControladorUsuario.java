@@ -17,7 +17,6 @@ public class ControladorUsuario {
             this.usuarioDAO = new UsuarioDAO(conexion);
         } catch (SQLException e) {
             e.printStackTrace();
-            // Manejar la excepción adecuadamente
         }
     }
     
@@ -81,7 +80,7 @@ public class ControladorUsuario {
     }
 
     public boolean cerrarSesion(){
-        System.out.println("Cerrar sesion: Exitoso"); // Manejar el cerrado de sesion
+        System.out.println("Cerrar sesion: Exitoso"); 
         usuarioActual = null;
         try {
             System.out.println(usuarioActual.getNombreUsuario());
@@ -104,7 +103,6 @@ public class ControladorUsuario {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Manejar la excepción adecuadamente
         }
         System.out.println(usuarioActual.getNombreUsuario());
         System.out.println(usuarioActual.getEsSubscriptor());

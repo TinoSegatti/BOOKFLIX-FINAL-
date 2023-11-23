@@ -17,11 +17,11 @@ public class PanelInicio extends JPanel {
         JLabel titulo = new JLabel("<html><br><br>Bookflix<br><br></html>");
         Icon icono = new ImageIcon("C:/Users/noteb/Pictures/bookflix/Captura de pantalla 2023-11-14 235356.png");
 
-        // Cambiar el tamaño de la fuente
+        //config de fuente
         Font font = titulo.getFont();
         titulo.setFont(new Font("Courier New", Font.PLAIN, 42));
         titulo.setForeground(new Color(0, 0, 0));
-        setLayout(new GridLayout(2, 1)); // 2 filas, 1 columna
+        setLayout(new GridLayout(2, 1)); // 2 filas 1 columna
 
         JPanel panelTitulo = new JPanel() {
             
@@ -42,16 +42,16 @@ public class PanelInicio extends JPanel {
         panelTitulo.add(titulo, icono);
         
 
-     // Cambiar el color de fondo de los botones
+     //color de fondo de los botones
         botonIniciarSesion.setBackground(new Color(107, 230, 207));
         botonCrearCuenta.setBackground(new Color(107, 230, 207));   
         
-     // Cambiar el color del texto en los botones
+     //color del texto en los botones
         botonIniciarSesion.setForeground(new Color(0, 0, 0)); 
         botonCrearCuenta.setForeground(new Color(0, 0, 0));   
    
         
-        // Crear un panel para los botones
+        //Panel para los botones
         JPanel panelBotones = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
@@ -70,7 +70,7 @@ public class PanelInicio extends JPanel {
         panelBotones.add(botonIniciarSesion);
         panelBotones.add(botonCrearCuenta);
 
-        // Agregar los componentes al panel
+        //componentes
         add(panelTitulo);
         add(panelBotones);
 

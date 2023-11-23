@@ -25,7 +25,7 @@ public class PestanyaCatalogo extends JPanel{
     }
 
     public void actualizarCatalogo() {
-        // Elimina todos los componentes existentes
+        //elimina todos los componentes existentes
         this.removeAll();
         this.setLayout(new BorderLayout());
 
@@ -44,34 +44,34 @@ public class PestanyaCatalogo extends JPanel{
             add(etiquetaNoSuscriptor, BorderLayout.CENTER);
         }
         else{
-            // Obtén la lista de libros del catálogo
+            //lista de libros del catálogo
             ArrayList<Libro> libros = controladorCatalogo.getCatalogoActual().getListaLibros();
 
-            // Crea un array de strings para los nombres de los libros
+            //crea un array de strings para los nombres de los libros
             String[] nombresLibros = new String[libros.size()];
             for (int i = 0; i < libros.size(); i++) {
                 nombresLibros[i] = libros.get(i).getNombreLibro();
             }
 
-            // Crea un JList con los nombres de los libros
+            //JList con los nombres de los libros
             JList<String> listaLibros = new JList<>(nombresLibros);
             listaLibros.setSelectionBackground(Color.CYAN);
             listaLibros.setBorder(BorderFactory.createLineBorder(Color.BLACK));
 
-            // Añade un MouseListener a la lista
+            // MouseListener a la lista
             listaLibros.addMouseListener(new MouseAdapter() {
                 @SuppressWarnings("unchecked")
                 public void mouseClicked(MouseEvent evt) {
                     JList<String> list = (JList<String>)evt.getSource();
                     if (evt.getClickCount() == 2) { // Doble clic
             
-                        // Obtiene el índice del elemento seleccionado
+                        //índice del elemento seleccionado
                         int index = list.locationToIndex(evt.getPoint());
             
-                        // Obtiene el libro seleccionado
+                        //libro seleccionado usando index de arriba :)
                         Libro libroSeleccionado = libros.get(index);
             
-                        // Crea una nueva ventana con la información del libro
+                        //ventana con la información del libro(sin estilo)
                         JFrame frame = new JFrame("Información del libro");
                         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                         frame.setSize(300, 200);
@@ -90,7 +90,7 @@ public class PestanyaCatalogo extends JPanel{
             add(new JScrollPane(listaLibros), BorderLayout.CENTER);
         }
 
-        // Actualiza el panel para que se muestren los nuevos componentes
+        // Actualiza el panel
         this.revalidate();
         this.repaint();
     }

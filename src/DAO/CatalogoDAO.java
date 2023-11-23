@@ -61,7 +61,6 @@ public class CatalogoDAO {
                 String autorLibro = rs.getString("autorLibro");
                 String generoLibro = rs.getString("generoLibro");
                 String descripcionLibro = rs.getString("descripcionLibro");
-                // Asume que tienes un método en la clase Catalogo para agregar un libro
                 catalogo.agregarLibro(nombreLibro, autorLibro, generoLibro, descripcionLibro);
             }
             return catalogo;

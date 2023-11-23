@@ -17,7 +17,7 @@ public class ControladorCatalogo {
             this.catalogoDAO = new CatalogoDAO(conexion);
         } catch (SQLException e) {
             e.printStackTrace();
-            // Manejar la excepción adecuadamente
+         
         }
         actualizarCatalogoActual();
     }

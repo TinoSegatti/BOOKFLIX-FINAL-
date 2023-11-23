@@ -23,58 +23,60 @@ public class PanelCrearCuenta extends JPanel {
         ImageIcon icono = new ImageIcon(new ImageIcon("C:/Users/noteb/Pictures/bookflix/Captura de pantalla "
         		+ "2023-11-14 235356.png").getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
         gbc.insets = new Insets(1, 10, 10, 10);
-        // Imagen sobre el campo del usuario
+        // imagen sobre "usuario"
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.gridwidth = 2; // Ocupa dos columnas
-        gbc.anchor = GridBagConstraints.CENTER; // Centra en horizontal
-        gbc.insets = new Insets(5, 10, 1, 10); // Margen superior de 20 píxeles
+        gbc.gridwidth = 2; // columnas ocupadas
+        gbc.anchor = GridBagConstraints.CENTER; 
+        gbc.insets = new Insets(5, 10, 1, 10); // margenes
         JLabel imagenLabel = new JLabel(icono);
         add(imagenLabel, gbc);
         
         
-        // Usuario Label
+        // usuario Label
         gbc.gridx = 0;
-        gbc.gridy = 1; // Incrementé el índice de la fila
+        gbc.gridy = 1; //indice de la fila
         gbc.insets = new Insets(0, 0, 10, 0);
-        gbc.anchor = GridBagConstraints.CENTER; // Alinea a la izquierda
+        gbc.anchor = GridBagConstraints.CENTER;
         JLabel usuarioLabel = new JLabel("Usuario:");
-        usuarioLabel.setForeground(Color.WHITE); // Establece el color del texto a blanco
+        usuarioLabel.setForeground(Color.WHITE); //color del texto a blanco
         add(usuarioLabel, gbc);
 
-        // Campo de texto para el usuario
+        //campo de texto para el usuario
         gbc.gridy = 2;
         nombreUsuarioField = new JTextField(15);
         add(nombreUsuarioField, gbc);
 
-        // Contraseña Label
+        //contraseña Label
         gbc.gridy = 3;
         JLabel contraseniaLabel = new JLabel("Contraseña:");
-        contraseniaLabel.setForeground(Color.WHITE); // Establece el color del texto a blanco
+        contraseniaLabel.setForeground(Color.WHITE); //color del texto a blanco
         add(contraseniaLabel, gbc);
-        // Campo de contraseña
-        gbc.gridy = 4; // Cambiado el índice de la fila
+        
+        //campo de contraseña
+        gbc.gridy = 4; //indice de la fila
         contraseniaField = new JPasswordField(15);
         add(contraseniaField, gbc);
 
         
-        // Confirmar Contraseña Label
+        //confirmar Contraseña Label
         gbc.gridy = 5;
         JLabel confcontraseniaLabel = new JLabel(" Confirmar Contraseña:");
-        confcontraseniaLabel.setForeground(Color.WHITE); // Establece el color del texto a blanco
+        confcontraseniaLabel.setForeground(Color.WHITE); //color del texto a blanco
         add(confcontraseniaLabel, gbc);
-        // Campo de confirmar contraseña
-        gbc.gridy = 6; // Incrementado el índice de la fila
+        
+        //campo de confirmar contraseña
+        gbc.gridy = 6; //indice de la fila
         confirmarContraseniaField = new JPasswordField(15);
         add(confirmarContraseniaField, gbc);
 
        
-        // Panel de botones
+        // panel de botones
         JPanel panelBotones = new JPanel() {
             @Override
             protected void paintComponent(Graphics g) {
                 super.paintComponent(g);
-                // Pintar el fondo del panel aquí si lo necesitas
+                //pintar panel de botones
                 g.setColor(new Color(0, 0, 47));
                 g.fillRect(0, 0, getWidth(), getHeight());
             }
@@ -89,23 +91,23 @@ public class PanelCrearCuenta extends JPanel {
         botonAtras.setMaximumSize(new Dimension(Integer.MAX_VALUE, botonAtras.getPreferredSize().height));
         
 
-        // Establecer el mismo tamaño preferido para ambos botones
-        Dimension buttonSize = new Dimension(150, 30); // Ajusta el tamaño según sea necesario
+        //tamaño preferido para botones
+        Dimension buttonSize = new Dimension(150, 30);
         botonCrearCuenta.setPreferredSize(buttonSize);
         botonAtras.setPreferredSize(buttonSize);
 
         panelBotones.add(botonCrearCuenta);
 
-        // Agregar espacio en blanco entre los botones
-        panelBotones.add(Box.createRigidArea(new Dimension(0, 10))); // Ajusta la distancia aquí
+        //espacio en blanco entre los botones
+        panelBotones.add(Box.createRigidArea(new Dimension(0, 10)));
 
         panelBotones.add(botonAtras);
 
-        // Configuración para el panel de botones
-        gbc.gridy = 7; // Incrementé el índice de la fila
-        gbc.gridwidth = 2; // Ocupa dos columnas
-        gbc.anchor = GridBagConstraints.CENTER; // Centra en horizontal
-        panelBotones.setAlignmentX(Component.CENTER_ALIGNMENT); // Centra el panel de botones
+        //configuración para el panel de botones
+        gbc.gridy = 7; //indice de la fila
+        gbc.gridwidth = 2; //columnas
+        gbc.anchor = GridBagConstraints.CENTER;
+        panelBotones.setAlignmentX(Component.CENTER_ALIGNMENT);
         add(panelBotones, gbc);
         
         botonAtras.addActionListener(e -> vistaPrincipal.cambiarPanel(new PanelInicio(controladorUsuario, controladorCatalogo, vistaPrincipal)));

@@ -18,7 +18,8 @@ public class PestanyaConfiguracion extends JPanel {
     private JButton botonSuscribirseCancelar;
     private ControladorUsuario controladorUsuario;
 
-    public PestanyaConfiguracion(ControladorUsuario controladorUsuario, ControladorCatalogo controladorCatalogo, VistaPrincipal vistaPrincipal, PestanyaCatalogo pestanyaCatalogo) {
+    public PestanyaConfiguracion(ControladorUsuario controladorUsuario, ControladorCatalogo controladorCatalogo, 
+    		VistaPrincipal vistaPrincipal, PestanyaCatalogo pestanyaCatalogo) {
         this.controladorUsuario = controladorUsuario;
         GridBagConstraints gbc = new GridBagConstraints();
         Color colorFondo = new Color(0, 0, 47); 
@@ -61,7 +62,7 @@ public class PestanyaConfiguracion extends JPanel {
         });
     }
     
-    // metodo para actualizar el texto del boton segun el estado del usuario
+    // metodo para actualizar el texto del boton segu n el estado del usuario
     private void actualizarTextoBoton() {
         if (controladorUsuario.getUsuarioActual().getEsSubscriptor()) {
             botonSuscribirseCancelar.setText("Cancelar Suscripción");

@@ -14,7 +14,8 @@ public class CatalogoDAO {
     public boolean agregarLibro(String nombreLibro, String autorLibro, String generoLibro, String descripcionLibro){
         System.out.println(nombreLibro);
         try {
-            PreparedStatement ps = conexion.prepareStatement("INSERT INTO t_catalogo (nombreLibro, autorLibro, generoLibro, descripcionLibro) VALUES (?, ?, ?, ?)");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO t_catalogo (nombreLibro, autorLibro, generoLibro, descripcionLibro) "
+            		+ "VALUES (?, ?, ?, ?)");
             ps.setString(1, nombreLibro);
             ps.setString(2, autorLibro);
             ps.setString(3, generoLibro);

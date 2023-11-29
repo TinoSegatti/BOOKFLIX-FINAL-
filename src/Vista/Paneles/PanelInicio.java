@@ -76,7 +76,9 @@ public class PanelInicio extends JPanel {
 
       
         
-        botonIniciarSesion.addActionListener(e -> vistaPrincipal.cambiarPanel(new PanelIniciarSesion(controladorUsuario, controladorCatalogo, vistaPrincipal)));
-        botonCrearCuenta.addActionListener(e -> vistaPrincipal.cambiarPanel(new PanelCrearCuenta(controladorUsuario, controladorCatalogo, vistaPrincipal)));
+        botonIniciarSesion.addActionListener(e -> vistaPrincipal.cambiarPanel(new PanelIniciarSesion(controladorUsuario, controladorCatalogo, 
+        		vistaPrincipal)));
+        botonCrearCuenta.addActionListener(e -> vistaPrincipal.cambiarPanel(new PanelCrearCuenta(controladorUsuario, controladorCatalogo, 
+        		vistaPrincipal)));
     }
 }

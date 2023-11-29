@@ -26,7 +26,8 @@ public class UsuarioDAO {
 
     public boolean crearUsuario(String usuario, String contrasenia) {
         try {
-            PreparedStatement ps = conexion.prepareStatement("INSERT INTO t_usuarios (nombreUsuario, contraUsuario, esAdmin, esSubscriptor) VALUES (?, ?, ?, ?)");
+            PreparedStatement ps = conexion.prepareStatement("INSERT INTO t_usuarios (nombreUsuario, contraUsuario, esAdmin, esSubscriptor) "
+            		+ "VALUES (?, ?, ?, ?)");
             ps.setString(1, usuario);
             ps.setString(2, contrasenia);
             ps.setBoolean(3, false);
